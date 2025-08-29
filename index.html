@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iCodeX Academy – Learn. Build. Grow.</title>
+    <meta name="description" content="Practical tech skills, short courses, real projects, and a vibrant community." />
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Motion One (Framer's web animations) -->
+    <script src="https://unpkg.com/motion@10.16.2/dist/motion.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+            colors: {
+              brand: {
+                50: '#ecfeff',
+                100: '#cffafe',
+                200: '#a5f3fc',
+                300: '#67e8f9',
+                400: '#22d3ee',
+                500: '#06b6d4',
+                600: '#0891b2',
+                700: '#0e7490',
+                800: '#155e75',
+                900: '#164e63'
+              },
+              accent: {
+                500: '#22c55e',
+                600: '#16a34a',
+                700: '#15803d'
+              }
+            },
+            boxShadow: {
+              glow: '0 0 0 2px rgba(6,182,212,0.15), 0 10px 30px rgba(6,182,212,0.12)'
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+      .reveal.show { opacity: 1; transform: translateY(0); }
+      .animated-gradient { background: radial-gradient(1200px 600px at 10% 10%, rgba(6,182,212,0.12), transparent 60%), radial-gradient(1000px 500px at 90% 20%, rgba(34,197,94,0.10), transparent 60%), linear-gradient(180deg, rgba(15,23,42,1) 0%, rgba(2,6,23,1) 100%); background-size: 200% 200%; animation: gradientShift 14s ease-in-out infinite; }
+      @keyframes gradientShift { 0% { background-position: 0% 0%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 0%; } }
+      html { scroll-behavior: smooth; }
+    </style>
+  </head>
+  <body class="bg-slate-950 text-slate-200 font-sans selection:bg-brand-500/30">
+    <!-- Nav -->
+    <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-slate-950/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between py-4">
+          <a href="#" class="flex items-center gap-2 group">
+            <span class="relative inline-flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br from-brand-500 to-accent-600 text-white shadow-glow">
+              <!-- iCodeX monogram -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7 7l-4 5 4 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17 7l4 5-4 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="text-lg font-semibold tracking-tight">iCodeX Academy</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+            <a href="#about" class="hover:text-white transition">About</a>
+            <a href="#programs" class="hover:text-white transition">Programs</a>
+            <a href="#journey" class="hover:text-white transition">How it works</a>
+            <a href="#community" class="hover:text-white transition">Community</a>
+            <a href="#contact" class="hover:text-white transition">Contact</a>
+            <a href="pre-register.html" class="ml-2 inline-flex items-center gap-2 rounded-lg bg-brand-500/10 text-brand-200 hover:text-white hover:bg-brand-500/20 px-3 py-2 transition">
+              <span>Pre-Register</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div class="pointer-events-none absolute inset-0 -z-10 animated-gradient"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div class="reveal show">
+            <p class="inline-flex items-center gap-2 text-xs font-medium tracking-wide uppercase text-brand-300 mb-3">
+              <span class="h-1.5 w-1.5 rounded-full bg-brand-400"></span> Future-proof learning
+            </p>
+            <h1 id="hero-title" class="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
+              🚀 Learn. Build. Grow. With iCodeX Academy.
+            </h1>
+            <p class="mt-4 text-lg text-slate-300 max-w-2xl">
+              Practical tech skills, short courses, real projects, and a vibrant community.
+            </p>
+            <div class="mt-8 flex flex-col sm:flex-row gap-3" id="hero-ctas">
+              <a href="pre-register.html" class="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-600 text-white px-6 py-3 font-semibold shadow-glow transition">
+                🎓 Pre-Register
+              </a>
+              <a href="#community" class="inline-flex items-center justify-center rounded-2xl border border-slate-700 hover:border-slate-600 hover:bg-slate-800/60 px-6 py-3 font-semibold text-slate-200 transition">
+                📢 Join the Community
+              </a>
+            </div>
+          </div>
+          <div class="relative reveal">
+            <!-- Simple student illustrations -->
+            <div class="relative mx-auto w-full max-w-md">
+              <div class="absolute -top-8 -left-8 h-24 w-24 rounded-xl bg-brand-500/10 border border-brand-500/20 rotate-6"></div>
+              <div class="absolute -bottom-10 -right-8 h-28 w-28 rounded-full bg-accent-600/10 border border-accent-600/30"></div>
+              <div class="rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/90 to-slate-800/80 p-6 shadow-2xl backdrop-blur supports-[backdrop-filter]:bg-slate-900/70">
+                <div class="grid grid-cols-3 gap-4">
+                  <div class="col-span-3 rounded-xl bg-slate-900/70 border border-slate-800 p-4">
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-2 text-sm text-slate-300">
+                        <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                        <span>Live Preview</span>
+                      </div>
+                      <div class="inline-flex rounded-lg bg-slate-800/60 p-1 border border-slate-700" role="tablist" aria-label="Live preview tabs">
+                        <button class="px-3 py-1.5 text-xs font-medium rounded-md text-slate-300 bg-slate-900/60 border border-slate-700" data-tab="python" aria-selected="true">Python</button>
+                        <button class="px-3 py-1.5 text-xs font-medium rounded-md text-slate-300 hover:text-white" data-tab="web">Web</button>
+                        <button class="px-3 py-1.5 text-xs font-medium rounded-md text-slate-300 hover:text-white" data-tab="design">3D/Design</button>
+                      </div>
+                    </div>
+                    <div class="mt-3 rounded-lg bg-slate-950 border border-slate-800">
+                      <div class="flex items-center justify-between px-3 py-2 border-b border-slate-800">
+                        <p class="text-xs text-slate-400" id="editor-label">student_code.py</p>
+                        <div class="flex items-center gap-2">
+                          <button id="copy-btn" class="inline-flex items-center gap-1.5 rounded-md border border-slate-700 hover:border-slate-600 px-2 py-1 text-xs text-slate-300 hover:text-white transition" title="Copy code">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            <span>Copy</span>
+                          </button>
+                          <button id="run-btn" class="inline-flex items-center gap-1.5 rounded-md bg-brand-600 hover:bg-brand-700 px-2.5 py-1.5 text-xs font-semibold text-white transition" title="Run (Web tab)">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3v18l15-9L5 3z"/></svg>
+                            <span>Run</span>
+                          </button>
+                        </div>
+                      </div>
+                      <textarea id="code-editor" aria-labelledby="editor-label" class="w-full h-40 p-3 bg-transparent text-sm text-slate-200 outline-none resize-y" spellcheck="false"></textarea>
+                      <div id="web-preview" class="hidden border-t border-slate-800">
+                        <iframe title="Web preview" class="w-full h-48 bg-white"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rounded-xl bg-slate-900/70 border border-slate-800 p-4">
+                    <svg viewBox="0 0 24 24" class="w-8 h-8 text-brand-400" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M4 17V7a2 2 0 0 1 2-2h9l5 5v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/>
+                      <path d="M14 5v4h4"/>
+                    </svg>
+                    <p class="mt-2 text-xs text-slate-400">Coding</p>
+                  </div>
+                  <div class="rounded-xl bg-slate-900/70 border border-slate-800 p-4">
+                    <svg viewBox="0 0 24 24" class="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M12 3v18M3 12h18"/>
+                    </svg>
+                    <p class="mt-2 text-xs text-slate-400">Security</p>
+                  </div>
+                  <div class="rounded-xl bg-slate-900/70 border border-slate-800 p-4">
+                    <svg viewBox="0 0 24 24" class="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <circle cx="8" cy="8" r="3"/><path d="M13 13h6v6h-6z"/>
+                    </svg>
+                    <p class="mt-2 text-xs text-slate-400">3D & UI</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div aria-hidden="true">
+      <svg viewBox="0 0 1440 90" class="w-full h-[60px] text-slate-950"><path fill="currentColor" d="M0,64L48,58.7C96,53,192,43,288,37.3C384,32,480,32,576,42.7C672,53,768,75,864,69.3C960,64,1056,32,1152,26.7C1248,21,1344,43,1392,53.3L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"/></svg>
+    </div>
+
+    <!-- About -->
+    <section id="about" class="reveal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 class="section-title text-2xl sm:text-3xl font-bold text-white">What makes us different?</h2>
+        <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-brand-700 hover:shadow-glow transition">
+            <h3 class="font-semibold text-white">Practical learning</h3>
+            <p class="mt-2 text-slate-400">Short modules and projects that build real skills.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-brand-700 hover:shadow-glow transition">
+            <h3 class="font-semibold text-white">Clear & fast</h3>
+            <p class="mt-2 text-slate-400">Less theory, more practice. Learn by doing.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-brand-700 hover:shadow-glow transition">
+            <h3 class="font-semibold text-white">Community-powered</h3>
+            <p class="mt-2 text-slate-400">Mentorship, peer support, and Discord.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-brand-700 hover:shadow-glow transition">
+            <h3 class="font-semibold text-white">Recognition</h3>
+            <p class="mt-2 text-slate-400">Badges, projects, and a portfolio that stands out.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs -->
+    <section id="programs" class="reveal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="flex items-end justify-between gap-4">
+          <h2 class="section-title text-2xl sm:text-3xl font-bold text-white">Programs</h2>
+          <p class="text-sm text-slate-400">Three tracks to fit your goals</p>
+        </div>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:translate-y-[-2px] hover:border-brand-600 transition shadow-lg hover:shadow-glow">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/15 text-brand-300">
+                  <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M3 7h18M3 12h18M3 17h18"/>
+                  </svg>
+                </span>
+                <h3 class="text-lg font-semibold text-white">Coding & Software</h3>
+              </div>
+            </div>
+            <p class="mt-3 text-slate-400">Python, Web, Java. Build apps that ship.</p>
+            <a href="#cta" class="mt-5 inline-flex items-center gap-2 text-brand-300 hover:text-white font-medium">
+              <span>Explore track</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+          <!-- Card 2 -->
+          <div class="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:translate-y-[-2px] hover:border-emerald-600 transition shadow-lg hover:shadow-[0_10px_30px_rgba(16,185,129,0.15)]">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-300">
+                  <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M12 3l9 4-9 4-9-4 9-4Z"/><path d="M12 11l9 4-9 4-9-4"/>
+                  </svg>
+                </span>
+                <h3 class="text-lg font-semibold text-white">Cybersecurity & Networking</h3>
+              </div>
+            </div>
+            <p class="mt-3 text-slate-400">Hands-on labs, Linux, and security basics.</p>
+            <a href="#cta" class="mt-5 inline-flex items-center gap-2 text-emerald-300 hover:text-white font-medium">
+              <span>Explore track</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+          <!-- Card 3 -->
+          <div class="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:translate-y-[-2px] hover:border-cyan-600 transition shadow-lg hover:shadow-[0_10px_30px_rgba(34,211,238,0.15)]">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-300">
+                  <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="8" cy="8" r="3"/><path d="M13 13h7v7h-7z"/>
+                  </svg>
+                </span>
+                <h3 class="text-lg font-semibold text-white">3D & Design</h3>
+              </div>
+            </div>
+            <p class="mt-3 text-slate-400">Blender, Unreal Engine, UI/UX essentials.</p>
+            <a href="#cta" class="mt-5 inline-flex items-center gap-2 text-cyan-300 hover:text-white font-medium">
+              <span>Explore track</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+          <!-- Upcoming Programs Large Card -->
+          <div class="col-span-1 md:col-span-3 rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/80 to-slate-800/70 p-6 md:p-8 shadow-2xl backdrop-blur supports-[backdrop-filter]:bg-slate-900/60">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <div>
+                <p class="text-xs font-medium tracking-wide uppercase text-brand-300">What’s next</p>
+                <h3 class="mt-2 text-xl sm:text-2xl font-bold text-white">Upcoming Programs</h3>
+                <p class="mt-2 text-slate-300 max-w-2xl">We’re cooking more tracks and deep-dive modules: Data Science sprints, Cloud & DevOps labs, Mobile (Flutter/React Native), and Advanced UI/3D pipelines. Stay tuned.</p>
+                <ul class="mt-4 grid sm:grid-cols-2 gap-2 text-sm text-slate-300">
+                  <li class="inline-flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-brand-400"></span> Data Science Mini Bootcamp</li>
+                  <li class="inline-flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> Cloud & DevOps Labs</li>
+                  <li class="inline-flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-cyan-400"></span> Mobile Apps Track</li>
+                  <li class="inline-flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-fuchsia-400"></span> Advanced UI/3D</li>
+                </ul>
+              </div>
+              <div class="shrink-0">
+                <a href="pre-register.html" class="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-600 text-white px-5 py-3 font-semibold shadow-glow transition">
+                  Get notified
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it Works -->
+    <section id="journey" class="reveal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 class="section-title text-2xl sm:text-3xl font-bold text-white">How it works</h2>
+        <div class="mt-8 grid md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <!-- Steps 1-6 -->
+          <div class="relative rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+            <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-brand-500/20 text-brand-300 text-sm font-semibold">1</span>
+            <p class="mt-3 text-sm text-slate-300">Free mini-course</p>
+          </div>
+          <div class="relative rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+            <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-brand-500/20 text-brand-300 text-sm font-semibold">2</span>
+            <p class="mt-3 text-sm text-slate-300">Choose your track</p>
+          </div>
+          <div class="relative rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+            <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-brand-500/20 text-brand-300 text-sm font-semibold">3</span>
+            <p class="mt-3 text-sm text-slate-300">Learn with short modules</p>
+          </div>
+          <div class="relative rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+            <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-brand-500/20 text-brand-300 text-sm font-semibold">4</span>
+            <p class="mt-3 text-sm text-slate-300">Do practical exercises</p>
+          </div>
+          <div class="relative rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+            <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-brand-500/20 text-brand-300 text-sm font-semibold">5</span>
+            <p class="mt-3 text-sm text-slate-300">Build a project</p>
+          </div>
+          <div class="relative rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+            <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-brand-500/20 text-brand-300 text-sm font-semibold">6</span>
+            <p class="mt-3 text-sm text-slate-300">Earn badges & join iCodeX-Team</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community -->
+    <section id="community" class="reveal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 class="section-title text-2xl sm:text-3xl font-bold text-white">Join our growing Discord community 🚀</h2>
+            <p class="mt-3 text-slate-300">Events: hackathons, challenges, and design jams. Learn with peers, get mentorship, and grow faster.</p>
+            <a href="#" class="mt-6 inline-flex items-center gap-3 rounded-2xl bg-[#5865F2] hover:bg-[#4752C4] text-white px-5 py-3 font-semibold transition shadow-[0_10px_30px_rgba(88,101,242,0.25)] animate-pulse">
+              <!-- Discord icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.369A19.91 19.91 0 0 0 16.558 3c-.209.375-.45.88-.617 1.289a18.27 18.27 0 0 0-7.883 0 12.26 12.26 0 0 0-.617-1.289 19.907 19.907 0 0 0-3.76 1.369C1.04 9.104.318 13.64.68 18.105a19.99 19.99 0 0 0 5.993 3.079c.48-.657.908-1.356 1.273-2.091-.701-.263-1.37-.588-2.002-.969.168-.125.333-.256.492-.391 3.873 1.804 8.072 1.804 11.9 0 .16.135.324.266.492.391-.632.381-1.301.706-2.002.969.365.735.793 1.434 1.273 2.091a19.99 19.99 0 0 0 5.993-3.079c.493-6.077-.841-10.564-3.777-13.736ZM8.68 15.322c-1.165 0-2.118-1.063-2.118-2.369 0-1.305.935-2.368 2.118-2.368 1.192 0 2.136 1.072 2.118 2.368 0 1.306-.935 2.369-2.118 2.369Zm6.64 0c-1.165 0-2.118-1.063-2.118-2.369 0-1.305.935-2.368 2.118-2.368 1.192 0 2.136 1.072 2.118 2.368 0 1.306-.926 2.369-2.118 2.369Z"/></svg>
+              <span>Join Now</span>
+            </a>
+          </div>
+          <div class="relative">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+              <div class="grid grid-cols-3 gap-4">
+                <div class="col-span-2 rounded-xl bg-slate-950 border border-slate-800 p-4">
+                  <p class="text-xs text-slate-400"># hackathon-announcements</p>
+                  <div class="mt-3 h-16 rounded-md bg-slate-900/70"></div>
+                </div>
+                <div class="rounded-xl bg-slate-950 border border-slate-800 p-4">
+                  <p class="text-xs text-slate-400"># design-jams</p>
+                  <div class="mt-3 h-16 rounded-md bg-slate-900/70"></div>
+                </div>
+                <div class="rounded-xl bg-slate-950 border border-slate-800 p-4">
+                  <p class="text-xs text-slate-400"># challenges</p>
+                  <div class="mt-3 h-16 rounded-md bg-slate-900/70"></div>
+                </div>
+                <div class="col-span-2 rounded-xl bg-slate-950 border border-slate-800 p-4">
+                  <p class="text-xs text-slate-400"># mentorship</p>
+                  <div class="mt-3 h-16 rounded-md bg-slate-900/70"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section id="cta" class="reveal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="relative overflow-hidden rounded-3xl border border-slate-800 bg-gradient-to-r from-slate-900 via-slate-900 to-slate-800 p-8 sm:p-12">
+          <div class="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-brand-500/20 blur-3xl"></div>
+          <h3 class="text-2xl sm:text-3xl font-bold text-white">Start your journey today. Learn skills that matter.</h3>
+          <p class="mt-2 text-slate-300">Join free and unlock your first lessons within minutes.</p>
+          <a href="#" class="mt-6 inline-flex items-center justify-center rounded-xl bg-accent-600 hover:bg-accent-700 text-white px-6 py-3 font-semibold transition shadow-[0_10px_30px_rgba(34,197,94,0.25)]">
+            🚀 Get Started for Free
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="border-t border-slate-800 bg-gradient-to-t from-slate-950 to-transparent">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid md:grid-cols-3 gap-8 items-center">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-accent-600 text-white">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 7l-4 5 4 5M17 7l4 5-4 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <p class="font-semibold">iCodeX Academy</p>
+            </div>
+            <p class="mt-3 text-sm text-slate-400">© 2025 iCodeX Academy. All rights reserved.</p>
+          </div>
+          <div class="flex gap-6 text-sm justify-start md:justify-center">
+            <a href="#about" class="text-slate-300 hover:text-white">About</a>
+            <a href="#programs" class="text-slate-300 hover:text-white">Programs</a>
+            <a href="#community" class="text-slate-300 hover:text-white">Community</a>
+            <a href="#contact" class="text-slate-300 hover:text-white">Contact</a>
+          </div>
+          <div class="flex gap-4 justify-start md:justify-end">
+            <!-- Discord -->
+            <a aria-label="Discord" href="#" class="inline-flex items-center justify-center h-10 w-10 rounded-full bg-slate-900 border border-slate-800 hover:border-[#5865F2] hover:text-[#5865F2] transition">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.369A19.91 19.91 0 0 0 16.558 3c-.209.375-.45.88-.617 1.289a18.27 18.27 0 0 0-7.883 0 12.26 12.26 0 0 0-.617-1.289 19.907 19.907 0 0 0-3.76 1.369C1.04 9.104.318 13.64.68 18.105a19.99 19.99 0 0 0 5.993 3.079c.48-.657.908-1.356 1.273-2.091-.701-.263-1.37-.588-2.002-.969.168-.125.333-.256.492-.391 3.873 1.804 8.072 1.804 11.9 0 .16.135.324.266.492.381-.632.381-1.301.706-2.002.969.365.735.793 1.434 1.273 2.091a19.99 19.99 0 0 0 5.993-3.079c.493-6.077-.841-10.564-3.777-13.736ZM8.68 15.322c-1.165 0-2.118-1.063-2.118-2.369 0-1.305.935-2.368 2.118-2.368 1.192 0 2.136 1.072 2.118 2.368 0 1.306-.935 2.369-2.118 2.369Zm6.64 0c-1.165 0-2.118-1.063-2.118-2.369 0-1.305.935-2.368 2.118-2.368 1.192 0 2.136 1.072 2.118 2.368 0 1.306-.926 2.369-2.118 2.369Z"/></svg>
+            </a>
+            <!-- LinkedIn -->
+            <a aria-label="LinkedIn" href="#" class="inline-flex items-center justify-center h-10 w-10 rounded-full bg-slate-900 border border-slate-800 hover:border-[#0A66C2] hover:text-[#0A66C2] transition">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8.98h5V24H0V8.98zM8.98 8.98H14v2.05h.07c.7-1.33 2.4-2.73 4.93-2.73 5.27 0 6.24 3.47 6.24 7.98V24h-5v-6.6c0-1.58-.03-3.62-2.2-3.62-2.2 0-2.54 1.72-2.54 3.5V24h-5V8.98z"/></svg>
+            </a>
+            <!-- Instagram -->
+            <a aria-label="Instagram" href="#" class="inline-flex items-center justify-center h-10 w-10 rounded-full bg-slate-900 border border-slate-800 hover:border-[#E1306C] hover:text-[#E1306C] transition">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm6.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"/></svg>
+            </a>
+            <!-- TikTok -->
+            <a aria-label="TikTok" href="#" class="inline-flex items-center justify-center h-10 w-10 rounded-full bg-slate-900 border border-slate-800 hover:border-[#69C9D0] hover:text-[#69C9D0] transition">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21 8.5a7.5 7.5 0 01-5.5-2.4V17a5 5 0 11-5-5c.35 0 .69.04 1 .12v3.05a2 2 0 10-1 3.83A2 2 0 0013 17V2h3a7.5 7.5 0 005 4.5V8.5z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Mobile Bottom Taskbar -->
+    <nav class="md:hidden fixed bottom-3 left-1/2 -translate-x-1/2 z-50">
+      <div class="flex items-center gap-2 rounded-2xl bg-slate-900/60 border border-slate-800 backdrop-blur px-3 py-2 shadow-lg supports-[backdrop-filter]:bg-slate-900/50">
+        <a href="#" class="group inline-flex flex-col items-center px-3 py-1 text-xs text-slate-300 hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-0.5 text-slate-300 group-hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M9 22V12h6v10"/></svg>
+          <span>Home</span>
+        </a>
+        <a href="#programs" class="group inline-flex flex-col items-center px-3 py-1 text-xs text-slate-300 hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-0.5 text-slate-300 group-hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Programs</span>
+        </a>
+        <a href="#community" class="group inline-flex flex-col items-center px-3 py-1 text-xs text-slate-300 hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-0.5 text-slate-300 group-hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Community</span>
+        </a>
+        <a href="#" class="group inline-flex flex-col items-center px-3 py-1 text-xs text-slate-300 hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-0.5 text-slate-300 group-hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Profile</span>
+        </a>
+      </div>
+    </nav>
+    <!-- Scroll To Top Button -->
+    <button id="scrollTopBtn" aria-label="Scroll to top" class="fixed bottom-24 right-4 md:right-6 z-40 hidden rounded-full p-3 bg-brand-600 hover:bg-brand-700 text-white shadow-lg">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 15l7-7 7 7"/></svg>
+    </button>
+
+    <script>
+      // Intersection Observer for reveal-on-scroll
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      
+      // Motion One animations (hero + section titles)
+      const motionApi = window.motion;
+      if (motionApi && motionApi.animate) {
+        const { animate, stagger } = motionApi;
+        // Hero title + CTAs
+        animate('#hero-title', { opacity: [0, 1], y: [-16, 0] }, { duration: 0.8, easing: 'ease-out' });
+        animate('#hero-ctas a', { opacity: [0, 1], y: [-10, 0] }, { delay: stagger(0.12), duration: 0.6, easing: 'ease-out' });
+        // Section titles slide-in
+        const titleObserver = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              const fromLeft = Math.random() > 0.5;
+              animate(e.target, { opacity: [0, 1], x: [fromLeft ? -24 : 24, 0] }, { duration: 0.6, easing: 'ease-out' });
+              titleObserver.unobserve(e.target);
+            }
+          })
+        }, { threshold: 0.2 });
+        document.querySelectorAll('.section-title').forEach((t) => titleObserver.observe(t));
+      }
+      
+      // Live Preview: tabs, code editor, copy, and run (Web only)
+      const tabs = document.querySelectorAll('[data-tab]');
+      const editor = document.getElementById('code-editor');
+      const editorLabel = document.getElementById('editor-label');
+      const runBtn = document.getElementById('run-btn');
+      const copyBtn = document.getElementById('copy-btn');
+      const webPreviewContainer = document.getElementById('web-preview');
+      const webIframe = webPreviewContainer ? webPreviewContainer.querySelector('iframe') : null;
+      
+      const examples = {
+        python: `# Hello from iCodeX Academy\nname = "World"\nfor i in range(3):\n    print(f"Hello, {name}! #{i+1}")`,
+        web: `<!doctype html>\n<html>\n  <head>\n    <meta charset="utf-8"/>\n    <title>Preview</title>\n    <style>body{font-family:Inter,system-ui,-apple-system,sans-serif;padding:24px} .btn{background:#06b6d4;color:white;border:none;padding:10px 14px;border-radius:10px} .card{padding:16px;border:1px solid #e5e7eb;border-radius:12px}</style>\n  </head>\n  <body>\n    <h2>Web Preview</h2>\n    <div class="card">This is a simple preview card.</div>\n    <button class="btn" onclick="alert('Hello from preview!')">Click me</button>\n  </body>\n</html>`,
+        design: `# 3D / Design pseudo-code\n# Imagine Blender/Unreal steps here...\nsteps = [\n  "Open Blender",\n  "Add Cube",\n  "Apply Subdivision",\n  "Render"\n]\nfor s in steps:\n    print("- ", s)`
+      };
+      
+      function setActiveTab(name) {
+        tabs.forEach(t => {
+          const isActive = t.getAttribute('data-tab') === name;
+          t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          t.classList.toggle('bg-slate-900/60', isActive);
+          t.classList.toggle('border', isActive);
+          t.classList.toggle('border-slate-700', isActive);
+          t.classList.toggle('text-white', isActive);
+        });
+        editor.value = examples[name] || '';
+        if (name === 'web') {
+          runBtn.disabled = false;
+          runBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+          if (webPreviewContainer) webPreviewContainer.classList.remove('hidden');
+        } else {
+          runBtn.disabled = true;
+          runBtn.classList.add('opacity-50', 'cursor-not-allowed');
+          if (webPreviewContainer) webPreviewContainer.classList.add('hidden');
+        }
+        editorLabel.textContent = name === 'web' ? 'index.html' : (name === 'python' ? 'student_code.py' : 'design_notes.txt');
+      }
+      
+      tabs.forEach(btn => btn.addEventListener('click', () => setActiveTab(btn.getAttribute('data-tab'))));
+      
+      if (copyBtn) {
+        copyBtn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(editor.value);
+            copyBtn.innerHTML = '<span>Copied</span>';
+            setTimeout(() => { copyBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span>Copy</span>'; }, 1200);
+          } catch (e) {}
+        });
+      }
+      
+      if (runBtn && webIframe) {
+        runBtn.addEventListener('click', () => {
+          const doc = webIframe.contentDocument || webIframe.contentWindow.document;
+          doc.open();
+          doc.write(editor.value);
+          doc.close();
+        });
+      }
+      
+      // initialize default tab
+      setActiveTab('python');
+      
+      // Scroll-to-top button behavior
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+      if (scrollTopBtn) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) scrollTopBtn.classList.remove('hidden');
+          else scrollTopBtn.classList.add('hidden');
+        });
+        scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      }
+    </script>
+  </body>
+  </html>
+
+
