@@ -52,6 +52,10 @@ https://your-site.netlify.app/api/get-registrations
 ```
 icodex/
 ├── index.html              # Homepage
+├── about.html              # About page with mission, vision, and team
+├── programs.html           # Detailed programs page with all tracks
+├── how-it-works.html       # Student journey and learning process
+├── community.html          # Community features and Discord integration
 ├── pre-register.html       # Pre-registration form
 ├── netlify.toml           # Netlify configuration
 ├── netlify/
@@ -69,6 +73,30 @@ icodex/
 - Community section with Discord integration
 - Mobile bottom navigation
 - Scroll-to-top button
+
+### About Page (`about.html`)
+- Mission and vision statements
+- What makes us different section
+- Team member profiles
+- Company values and story
+
+### Programs Page (`programs.html`)
+- Detailed program descriptions
+- Curriculum breakdown for each track
+- Project examples and outcomes
+- Program features and benefits
+
+### How It Works Page (`how-it-works.html`)
+- 6-step student journey
+- Learning timeline and process
+- Interactive step-by-step guide
+- Program duration and structure
+
+### Community Page (`community.html`)
+- Discord community integration
+- Community events and activities
+- Member testimonials
+- Community statistics
 
 ### Pre-Registration (`pre-register.html`)
 - Animated form with validation

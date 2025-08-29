@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - iCodeX Academy</title>
+    <meta name="description" content="Learn about the iCodeX Academy learning journey from registration to graduation.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+                    colors: {
+                        brand: { 500: '#06b6d4', 600: '#0891b2', 700: '#0e7490' },
+                        accent: { 600: '#16a34a', 700: '#15803d' }
+                    },
+                    boxShadow: {
+                        glow: '0 0 0 2px rgba(6,182,212,0.25), 0 10px 30px rgba(6,182,212,0.18)'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        body { background: #020617; }
+        .bg-animated {
+            background: radial-gradient(1200px 600px at 10% 10%, rgba(6,182,212,0.12), transparent 60%),
+                        radial-gradient(1000px 500px at 90% 20%, rgba(34,197,94,0.10), transparent 60%),
+                        linear-gradient(180deg, rgba(15,23,42,1) 0%, rgba(2,6,23,1) 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 16s ease-in-out infinite;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 0%; }
+        }
+        .glass { background: rgba(2,6,23,0.6); backdrop-filter: blur(10px); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .step-line { position: relative; }
+        .step-line::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            width: 2px;
+            height: 60px;
+            background: linear-gradient(to bottom, rgba(6,182,212,0.5), transparent);
+            transform: translateX(-50%);
+        }
+        .step-line:last-child::after { display: none; }
+    </style>
+</head>
+<body class="font-sans text-slate-200 bg-slate-950">
+    <!-- Header -->
+    <header class="sticky top-4 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between rounded-3xl bg-slate-900/20 border border-slate-700/30 backdrop-blur-xl px-6 py-4 shadow-2xl supports-[backdrop-filter]:bg-slate-900/10">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <span class="relative inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br from-brand-500 to-accent-600 text-white shadow-glow">
+                      <!-- iCodeX monogram -->
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M7 7l-4 5 4 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 7l4 5-4 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <span class="text-xl font-semibold tracking-tight">iCodeX Academy</span>
+                </a>
+                <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+                    <a href="index.html" class="hover:text-white transition">Home</a>
+                    <a href="programs.html" class="hover:text-white transition">Programs</a>
+                    <a href="about.html" class="hover:text-white transition">About</a>
+                    <a href="community.html" class="hover:text-white transition">Community</a>
+                    <a href="pre-register.html" class="ml-2 inline-flex items-center gap-2 rounded-lg bg-brand-500/10 text-brand-200 hover:text-white hover:bg-brand-500/20 px-3 py-2 transition">
+                        <span>Pre-Register</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-16 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center reveal">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6">
+                    How <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">It Works</span>
+                </h1>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto">
+                    Your journey from beginner to tech professional in 6 simple steps. Join hundreds of students who have already transformed their careers.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Journey Steps -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="space-y-16">
+                <!-- Step 1 -->
+                <div class="step-line reveal">
+                    <div class="glass rounded-2xl border border-slate-800 p-8 relative">
+                        <div class="flex items-start gap-6">
+                            <div class="flex-shrink-0">
+                                <span class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 text-white text-2xl font-bold">
+                                    1
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-white mb-4">Free Mini-Course</h3>
+                                <p class="text-slate-300 mb-6">
+                                    Start with our free mini-course to get a taste of our teaching style and see if tech is right for you. No commitment required.
+                                </p>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800">
+                                        <h4 class="font-semibold text-white mb-2">What You'll Get:</h4>
+                                        <ul class="text-sm text-slate-300 space-y-1">
+                                            <li>• 2-hour interactive tutorial</li>
+                                            <li>• Build your first project</li>
+                                            <li>• Meet the community</li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800">
+                                        <h4 class="font-semibold text-white mb-2">Duration:</h4>
+                                        <p class="text-sm text-slate-300">1 week</p>
+                                        <h4 class="font-semibold text-white mb-2 mt-3">Cost:</h4>
+                                        <p class="text-sm text-slate-300">Completely Free</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-line reveal">
+                    <div class="glass rounded-2xl border border-slate-800 p-8 relative">
+                        <div class="flex items-start gap-6">
+                            <div class="flex-shrink-0">
+                                <span class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-500 to-accent-600 text-white text-2xl font-bold">
+                                    2
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-white mb-4">Choose Your Track</h3>
+                                <p class="text-slate-300 mb-6">
+                                    Select from our three specialized tracks based on your interests and career goals. Each track is designed to get you job-ready.
+                                </p>
+                                <div class="grid md:grid-cols-3 gap-4">
+                                    <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800 text-center">
+                                        <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                                            </svg>
+                                        </div>
+                                        <h4 class="font-semibold text-white mb-2">Coding & Software</h4>
+                                        <p class="text-sm text-slate-300">Full-stack development</p>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800 text-center">
+                                        <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center text-white">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                            </svg>
+                                        </div>
+                                        <h4 class="font-semibold text-white mb-2">Cybersecurity</h4>
+                                        <p class="text-sm text-slate-300">Security & networking</p>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800 text-center">
+                                        <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17v4a2 2 0 002 2h4M15 7l3-3m0 0l-3-3m3 3H9"/>
+                                            </svg>
+                                        </div>
+                                        <h4 class="font-semibold text-white mb-2">3D & Design</h4>
+                                        <p class="text-sm text-slate-300">Creative & visual design</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-line reveal">
+                    <div class="glass rounded-2xl border border-slate-800 p-8 relative">
+                        <div class="flex items-start gap-6">
+                            <div class="flex-shrink-0">
+                                <span class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 text-white text-2xl font-bold">
+                                    3
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-white mb-4">Learn with Short Modules</h3>
+                                <p class="text-slate-300 mb-6">
+                                    Our curriculum is broken down into bite-sized modules that you can complete at your own pace. Each module focuses on practical skills you'll use immediately.
+                                </p>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h4 class="font-semibold text-white mb-3">Module Structure:</h4>
+                                        <ul class="text-sm text-slate-300 space-y-2">
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-brand-400 rounded-full"></span>
+                                                Video lessons (15-30 minutes)
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-brand-400 rounded-full"></span>
+                                                Hands-on exercises
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-brand-400 rounded-full"></span>
+                                                Code reviews & feedback
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-brand-400 rounded-full"></span>
+                                                Community discussions
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-white mb-3">Learning Features:</h4>
+                                        <ul class="text-sm text-slate-300 space-y-2">
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-accent-400 rounded-full"></span>
+                                                24/7 access to materials
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-accent-400 rounded-full"></span>
+                                                Progress tracking
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-accent-400 rounded-full"></span>
+                                                Mobile-friendly learning
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-accent-400 rounded-full"></span>
+                                                Offline downloads
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step-line reveal">
+                    <div class="glass rounded-2xl border border-slate-800 p-8 relative">
+                        <div class="flex items-start gap-6">
+                            <div class="flex-shrink-0">
+                                <span class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 text-white text-2xl font-bold">
+                                    4
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-white mb-4">Do Practical Exercises</h3>
+                                <p class="text-slate-300 mb-6">
+                                    Apply what you learn through hands-on exercises and real-world scenarios. Practice makes perfect, and we provide plenty of opportunities to practice.
+                                </p>
+                                <div class="grid md:grid-cols-3 gap-4">
+                                    <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800 text-center">
+                                        <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center text-white">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                            </svg>
+                                        </div>
+                                        <h4 class="font-semibold text-white mb-2">Interactive Labs</h4>
+                                        <p class="text-sm text-slate-300">Real-time coding environments</p>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800 text-center">
+                                        <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center text-white">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                        </div>
+                                        <h4 class="font-semibold text-white mb-2">Quizzes & Tests</h4>
+                                        <p class="text-sm text-slate-300">Knowledge validation</p>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800 text-center">
+                                        <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                            </svg>
+                                        </div>
+                                        <h4 class="font-semibold text-white mb-2">Peer Reviews</h4>
+                                        <p class="text-sm text-slate-300">Learn from others</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="step-line reveal">
+                    <div class="glass rounded-2xl border border-slate-800 p-8 relative">
+                        <div class="flex items-start gap-6">
+                            <div class="flex-shrink-0">
+                                <span class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-red-500 to-red-600 text-white text-2xl font-bold">
+                                    5
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-white mb-4">Build a Project</h3>
+                                <p class="text-slate-300 mb-6">
+                                    Apply all your skills to build a real-world project that you can showcase to potential employers. This is where theory meets practice.
+                                </p>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h4 class="font-semibold text-white mb-3">Project Phases:</h4>
+                                        <ul class="text-sm text-slate-300 space-y-2">
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-brand-400 rounded-full"></span>
+                                                Planning & Design
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-brand-400 rounded-full"></span>
+                                                Development
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-brand-400 rounded-full"></span>
+                                                Testing & Debugging
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-brand-400 rounded-full"></span>
+                                                Deployment & Documentation
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-white mb-3">Support You'll Get:</h4>
+                                        <ul class="text-sm text-slate-300 space-y-2">
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-accent-400 rounded-full"></span>
+                                                Mentor guidance
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-accent-400 rounded-full"></span>
+                                                Code reviews
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-accent-400 rounded-full"></span>
+                                                Community feedback
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-accent-400 rounded-full"></span>
+                                                Technical support
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="reveal">
+                    <div class="glass rounded-2xl border border-slate-800 p-8 relative">
+                        <div class="flex items-start gap-6">
+                            <div class="flex-shrink-0">
+                                <span class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-green-500 to-green-600 text-white text-2xl font-bold">
+                                    6
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-white mb-4">Earn Badges & Join iCodeX-Team</h3>
+                                <p class="text-slate-300 mb-6">
+                                    Complete your journey by earning recognition badges and becoming part of our exclusive alumni network. Your success story starts here.
+                                </p>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h4 class="font-semibold text-white mb-3">What You'll Earn:</h4>
+                                        <ul class="text-sm text-slate-300 space-y-2">
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+                                                Completion certificate
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+                                                Skill badges
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+                                                Portfolio showcase
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+                                                Alumni network access
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-white mb-3">Career Support:</h4>
+                                        <ul class="text-sm text-slate-300 space-y-2">
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-brand-400 rounded-full"></span>
+                                                Resume building
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-brand-400 rounded-full"></span>
+                                                Interview preparation
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-brand-400 rounded-full"></span>
+                                                Job placement assistance
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-2 h-2 bg-brand-400 rounded-full"></span>
+                                                Networking events
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Summary -->
+    <section class="py-16 bg-slate-900/50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Your Learning Timeline</h2>
+                <p class="text-slate-300 max-w-2xl mx-auto">
+                    From start to finish, your journey typically takes 12-16 weeks depending on your chosen track and pace.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass rounded-2xl border border-slate-800 p-6 text-center reveal">
+                    <div class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 text-white mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Weeks 1-4</h3>
+                    <p class="text-slate-300 text-sm">Foundation building and core concepts</p>
+                </div>
+                
+                <div class="glass rounded-2xl border border-slate-800 p-6 text-center reveal">
+                    <div class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-500 to-accent-600 text-white mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Weeks 5-12</h3>
+                    <p class="text-slate-300 text-sm">Advanced skills and practical exercises</p>
+                </div>
+                
+                <div class="glass rounded-2xl border border-slate-800 p-6 text-center reveal">
+                    <div class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 text-white mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Weeks 13-16</h3>
+                    <p class="text-slate-300 text-sm">Final project and career preparation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <div class="glass rounded-2xl border border-slate-800 p-8 md:p-12 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Start Your Journey?</h2>
+                <p class="text-slate-300 mb-8 max-w-2xl mx-auto">
+                    Join hundreds of students who have already transformed their careers with iCodeX Academy. Your future in tech starts here.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="pre-register.html" class="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-600 text-white font-semibold transition shadow-glow">
+                        Start Your Journey
+                    </a>
+                    <a href="programs.html" class="inline-flex items-center justify-center px-8 py-3 rounded-xl border border-slate-700 hover:border-slate-600 text-slate-300 hover:text-white font-semibold transition">
+                        Explore Programs
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="md:hidden fixed bottom-3 left-1/2 -translate-x-1/2 z-50">
+        <div class="flex items-center gap-2 rounded-2xl bg-slate-900/60 border border-slate-800 backdrop-blur px-3 py-2 shadow-lg supports-[backdrop-filter]:bg-slate-900/50">
+            <a href="index.html" class="group inline-flex flex-col items-center px-3 py-1 text-xs text-slate-300 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-0.5 text-slate-300 group-hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 11l9-8 9 8"/>
+                    <path d="M9 22V12h6v10"/>
+                </svg>
+                <span>Home</span>
+            </a>
+            <a href="programs.html" class="group inline-flex flex-col items-center px-3 py-1 text-xs text-slate-300 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-0.5 text-slate-300 group-hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"/>
+                    <rect x="14" y="3" width="7" height="7"/>
+                    <rect x="14" y="14" width="7" height="7"/>
+                    <rect x="3" y="14" width="7" height="7"/>
+                </svg>
+                <span>Programs</span>
+            </a>
+            <a href="community.html" class="group inline-flex flex-col items-center px-3 py-1 text-xs text-slate-300 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-0.5 text-slate-300 group-hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+                <span>Community</span>
+            </a>
+            <a href="#" class="group inline-flex flex-col items-center px-3 py-1 text-xs text-slate-300 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-0.5 text-slate-300 group-hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+                <span>Profile</span>
+            </a>
+        </div>
+    </nav>
+
+    <script>
+        // Intersection Observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
+
