@@ -1,0 +1,148 @@
+/* iCodeX Academy - Index Page Styles */
+
+/* TailwindCSS Configuration */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* Custom CSS Variables */
+:root {
+  --brand-50: #ecfeff;
+  --brand-100: #cffafe;
+  --brand-200: #a5f3fc;
+  --brand-300: #67e8f9;
+  --brand-400: #22d3ee;
+  --brand-500: #06b6d4;
+  --brand-600: #0891b2;
+  --brand-700: #0e7490;
+  --brand-800: #155e75;
+  --brand-900: #164e63;
+  
+  --accent-500: #22c55e;
+  --accent-600: #16a34a;
+  --accent-700: #15803d;
+  
+  --glow-shadow: 0 0 0 2px rgba(6,182,212,0.15), 0 10px 30px rgba(6,182,212,0.12);
+  --glow-shadow-strong: 0 0 0 2px rgba(6,182,212,0.25), 0 10px 30px rgba(6,182,212,0.18);
+}
+
+/* Base Styles */
+html { 
+  scroll-behavior: smooth; 
+}
+
+body { 
+  background: #020617; 
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+}
+
+/* Animated Background */
+.animated-gradient { 
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(6,182,212,0.12), transparent 60%), 
+              radial-gradient(1000px 500px at 90% 20%, rgba(34,197,94,0.10), transparent 60%), 
+              linear-gradient(180deg, rgba(15,23,42,1) 0%, rgba(2,6,23,1) 100%); 
+  background-size: 200% 200%; 
+  animation: gradientShift 14s ease-in-out infinite; 
+}
+
+@keyframes gradientShift { 
+  0% { background-position: 0% 0%; } 
+  50% { background-position: 100% 50%; } 
+  100% { background-position: 0% 0%; } 
+}
+
+/* Reveal Animations */
+.reveal { 
+  opacity: 0; 
+  transform: translateY(16px); 
+  transition: opacity .7s ease, transform .7s ease; 
+}
+
+.reveal.show { 
+  opacity: 1; 
+  transform: translateY(0); 
+}
+
+/* Custom Shadows */
+.shadow-glow {
+  box-shadow: var(--glow-shadow);
+}
+
+/* Brand Colors */
+.text-brand-300 { color: var(--brand-300); }
+.text-brand-400 { color: var(--brand-400); }
+.text-brand-500 { color: var(--brand-500); }
+.text-brand-600 { color: var(--brand-600); }
+
+.bg-brand-500 { background-color: var(--brand-500); }
+.bg-brand-600 { background-color: var(--brand-600); }
+.bg-brand-700 { background-color: var(--brand-700); }
+
+.border-brand-600 { border-color: var(--brand-600); }
+.border-brand-700 { border-color: var(--brand-700); }
+
+/* Accent Colors */
+.text-accent-600 { color: var(--accent-600); }
+.text-accent-700 { color: var(--accent-700); }
+
+.bg-accent-600 { background-color: var(--accent-600); }
+.bg-accent-700 { background-color: var(--accent-700); }
+
+/* Gradient Text */
+.text-gradient {
+  background: linear-gradient(to right, var(--brand-400), var(--accent-400));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .animated-gradient {
+    background-size: 150% 150%;
+  }
+}
+
+/* Utility Classes */
+.backdrop-blur-xl {
+  backdrop-filter: blur(24px);
+}
+
+.supports-backdrop-filter .backdrop-blur-xl {
+  backdrop-filter: blur(24px);
+}
+
+/* Animation Utilities */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Selection Styles */
+::selection {
+  background-color: rgba(6, 182, 212, 0.3);
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(6, 182, 212, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.7);
+}
