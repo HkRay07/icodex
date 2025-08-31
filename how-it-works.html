@@ -17,20 +17,52 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between rounded-3xl bg-slate-900/20 border border-slate-700/30 backdrop-blur-xl px-6 py-4 shadow-2xl supports-[backdrop-filter]:bg-slate-900/10">
                 <a href="index.html" class="flex items-center gap-3 group">
-                    <img src="logo main.webp" alt="iCodeX Logo" class="w-12 h-12 rounded-lg object-cover shadow-glow">
+                    <img src="icodex-logo.webp" alt="iCodeX Logo" class="w-12 h-12 object-cover">
                     <span class="text-xl font-semibold tracking-tight">iCodeX Academy</span>
                 </a>
-                <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
-                    <a href="index.html" class="hover:text-white transition">Home</a>
-                    <a href="about.html" class="hover:text-white transition">About</a>
-                    <a href="programs.html" class="hover:text-white transition">Programs</a>
-                    <a href="how-it-works.html" class="hover:text-white transition">How it works</a>
-                    <a href="community.html" class="hover:text-white transition">Community</a>
-                    <a href="pre-register.html" class="ml-2 inline-flex items-center gap-2 rounded-lg bg-brand-500/10 text-brand-200 hover:text-white hover:bg-brand-500/20 px-3 py-2 transition">
+                <nav class="flex items-center gap-4 text-sm text-slate-300">
+                    <a href="index.html" class="hover:text-white transition hidden sm:block">Home</a>
+                    <a href="about.html" class="hover:text-white transition hidden sm:block">About</a>
+                    <a href="programs.html" class="hover:text-white transition hidden sm:block">Programs</a>
+                    <a href="how-it-works.html" class="hover:text-white transition hidden sm:block">How it works</a>
+                    <a href="community.html" class="hover:text-white transition hidden sm:block">Community</a>
+                    <a href="pre-register.html" class="inline-flex items-center gap-2 rounded-lg bg-brand-500/10 text-brand-200 hover:text-white hover:bg-brand-500/20 px-3 py-2 transition">
                         <span>Pre-Register</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     </a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="sm:hidden p-2 rounded-lg hover:bg-slate-800/50 transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                 </nav>
+                
+                <!-- Mobile Menu -->
+                <div id="mobileMenu" class="sm:hidden fixed inset-0 z-50 bg-slate-950/95 backdrop-blur-xl hidden">
+                    <div class="flex flex-col h-full">
+                        <div class="flex justify-between items-center p-6 border-b border-slate-800">
+                            <span class="text-xl font-semibold">Menu</span>
+                            <button id="closeMobileMenu" class="p-2 rounded-lg hover:bg-slate-800/50 transition">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <nav class="flex flex-col p-6 space-y-4">
+                            <a href="index.html" class="text-lg text-slate-300 hover:text-white transition py-3 border-b border-slate-800">Home</a>
+                            <a href="about.html" class="text-lg text-slate-300 hover:text-white transition py-3 border-b border-slate-800">About</a>
+                            <a href="programs.html" class="text-lg text-slate-300 hover:text-white transition py-3 border-b border-slate-800">Programs</a>
+                            <a href="how-it-works.html" class="text-lg text-white font-semibold py-3 border-b border-slate-800">How it works</a>
+                            <a href="community.html" class="text-lg text-slate-300 hover:text-white transition py-3 border-b border-slate-800">Community</a>
+                            <a href="pre-register.html" class="inline-flex items-center gap-2 rounded-lg bg-brand-500/10 text-brand-200 hover:text-white hover:bg-brand-500/20 px-4 py-3 transition mt-4">
+                                <span>Pre-Register</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -440,43 +472,7 @@
         </div>
     </section>
 
-    <!-- Mobile Bottom Navigation -->
-    <nav class="md:hidden fixed bottom-3 left-1/2 -translate-x-1/2 z-50">
-        <div class="flex items-center gap-2 rounded-2xl bg-slate-900/60 border border-slate-800 backdrop-blur px-3 py-2 shadow-lg supports-[backdrop-filter]:bg-slate-900/50">
-            <a href="index.html" class="group inline-flex flex-col items-center px-3 py-1 text-xs text-slate-300 hover:text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-0.5 text-slate-300 group-hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M3 11l9-8 9 8"/>
-                    <path d="M9 22V12h6v10"/>
-                </svg>
-                <span>Home</span>
-            </a>
-            <a href="programs.html" class="group inline-flex flex-col items-center px-3 py-1 text-xs text-slate-300 hover:text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-0.5 text-slate-300 group-hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="7" height="7"/>
-                    <rect x="14" y="3" width="7" height="7"/>
-                    <rect x="14" y="14" width="7" height="7"/>
-                    <rect x="3" y="14" width="7" height="7"/>
-                </svg>
-                <span>Programs</span>
-            </a>
-            <a href="community.html" class="group inline-flex flex-col items-center px-3 py-1 text-xs text-slate-300 hover:text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-0.5 text-slate-300 group-hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                    <circle cx="9" cy="7" r="4"/>
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                </svg>
-                <span>Community</span>
-            </a>
-            <a href="#" class="group inline-flex flex-col items-center px-3 py-1 text-xs text-slate-300 hover:text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-0.5 text-slate-300 group-hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                    <circle cx="12" cy="7" r="4"/>
-                </svg>
-                <span>Profile</span>
-            </a>
-        </div>
-    </nav>
+
 
     <script>
         // Intersection Observer for reveal animations
@@ -494,6 +490,28 @@
         }, observerOptions);
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+
+        if (mobileMenuBtn && mobileMenu && closeMobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+            });
+
+            closeMobileMenu.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+
+            // Close menu when clicking on a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
     </script>
 </body>
 </html>

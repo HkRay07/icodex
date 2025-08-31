@@ -57,12 +57,12 @@ body {
 
 /* Reveal Animations */
 .reveal { 
-  opacity: 0; 
-  transform: translateY(30px); 
+  opacity: 1; 
+  transform: translateY(0); 
   transition: all 0.6s ease; 
 }
 
-.reveal.active { 
+.reveal.show { 
   opacity: 1; 
   transform: translateY(0); 
 }
@@ -104,6 +104,32 @@ body {
 @media (max-width: 768px) {
   .bg-animated {
     background-size: 150% 150%;
+  }
+  
+  /* Mobile image fixes */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Mobile navigation improvements */
+  .glass {
+    background: rgba(2,6,23,0.8);
+  }
+  
+  /* Mobile spacing adjustments */
+  .py-16 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  /* Mobile text sizing */
+  .text-4xl {
+    font-size: 2rem;
+  }
+  
+  .text-3xl {
+    font-size: 1.75rem;
   }
 }
 

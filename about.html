@@ -7,8 +7,8 @@
     <meta name="description" content="Learn about iCodeX Academy's mission to provide practical tech education and build a vibrant learning community.">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="logo main.webp" />
-    <link rel="shortcut icon" type="image/webp" href="logo main.webp" />
+    <link rel="icon" type="image/webp" href="icodex-logo.webp" />
+    <link rel="shortcut icon" type="image/webp" href="icodex-logo.webp" />
     
     <!-- External CSS and JavaScript -->
     <link rel="stylesheet" href="about.css">
@@ -21,20 +21,52 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between rounded-3xl bg-slate-900/20 border border-slate-700/30 backdrop-blur-xl px-6 py-4 shadow-2xl supports-[backdrop-filter]:bg-slate-900/10">
                 <a href="index.html" class="flex items-center gap-3 group">
-                    <img src="logo main.webp" alt="iCodeX Logo" class="w-12 h-12 rounded-lg object-cover shadow-glow">
+                    <img src="icodex-logo.webp" alt="iCodeX Logo" class="w-12 h-12 object-cover">
                     <span class="text-xl font-semibold tracking-tight">iCodeX Academy</span>
                 </a>
-                <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
-                    <a href="index.html" class="hover:text-white transition">Home</a>
-                    <a href="about.html" class="hover:text-white transition">About</a>
-                    <a href="programs.html" class="hover:text-white transition">Programs</a>
-                    <a href="how-it-works.html" class="hover:text-white transition">How it works</a>
-                    <a href="community.html" class="hover:text-white transition">Community</a>
-                    <a href="pre-register.html" class="ml-2 inline-flex items-center gap-2 rounded-lg bg-brand-500/10 text-brand-200 hover:text-white hover:bg-brand-500/20 px-3 py-2 transition">
+                <nav class="flex items-center gap-4 text-sm text-slate-300">
+                    <a href="index.html" class="hover:text-white transition hidden sm:block">Home</a>
+                    <a href="about.html" class="hover:text-white transition hidden sm:block">About</a>
+                    <a href="programs.html" class="hover:text-white transition hidden sm:block">Programs</a>
+                    <a href="how-it-works.html" class="hover:text-white transition hidden sm:block">How it works</a>
+                    <a href="community.html" class="hover:text-white transition hidden sm:block">Community</a>
+                    <a href="pre-register.html" class="inline-flex items-center gap-2 rounded-lg bg-brand-500/10 text-brand-200 hover:text-white hover:bg-brand-500/20 px-3 py-2 transition">
                         <span>Pre-Register</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     </a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="sm:hidden p-2 rounded-lg hover:bg-slate-800/50 transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                 </nav>
+                
+                <!-- Mobile Menu -->
+                <div id="mobileMenu" class="sm:hidden fixed inset-0 z-50 bg-slate-950/95 backdrop-blur-xl hidden">
+                    <div class="flex flex-col h-full">
+                        <div class="flex justify-between items-center p-6 border-b border-slate-800">
+                            <span class="text-xl font-semibold">Menu</span>
+                            <button id="closeMobileMenu" class="p-2 rounded-lg hover:bg-slate-800/50 transition">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <nav class="flex flex-col p-6 space-y-4">
+                            <a href="index.html" class="text-lg text-slate-300 hover:text-white transition py-3 border-b border-slate-800">Home</a>
+                            <a href="about.html" class="text-lg text-white font-semibold py-3 border-b border-slate-800">About</a>
+                            <a href="programs.html" class="text-lg text-slate-300 hover:text-white transition py-3 border-b border-slate-800">Programs</a>
+                            <a href="how-it-works.html" class="text-lg text-slate-300 hover:text-white transition py-3 border-b border-slate-800">How it works</a>
+                            <a href="community.html" class="text-lg text-slate-300 hover:text-white transition py-3 border-b border-slate-800">Community</a>
+                            <a href="pre-register.html" class="inline-flex items-center gap-2 rounded-lg bg-brand-500/10 text-brand-200 hover:text-white hover:bg-brand-500/20 px-4 py-3 transition mt-4">
+                                <span>Pre-Register</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -81,7 +113,7 @@
                     </div>
                 </div>
                 <div class="reveal">
-                    <img src="logo2.webp" alt="iCodeX Academy" class="w-full h-auto rounded-2xl shadow-2xl">
+                    <img src="icodex-cpu.webp" alt="iCodeX CPU" class="w-full h-auto rounded-2xl shadow-2xl max-w-full">
                 </div>
             </div>
         </div>
@@ -190,7 +222,7 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <img src="logo main.webp" alt="iCodeX Logo" class="w-10 h-10 rounded-lg object-cover">
+                        <img src="icodex-logo.webp" alt="iCodeX Logo" class="w-10 h-10 object-cover">
                         <span class="text-lg font-semibold">iCodeX Academy</span>
                     </div>
                     <p class="text-slate-300 text-sm">
@@ -263,8 +295,38 @@
             });
         }, observerOptions);
 
+        // Make sure elements are visible by default and add show class
         document.querySelectorAll('.reveal').forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
             observer.observe(el);
+        });
+
+        // Add show class to all reveal elements after a short delay
+        setTimeout(() => {
+            document.querySelectorAll('.reveal').forEach(el => {
+                el.classList.add('show');
+            });
+        }, 100);
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Close menu when clicking on a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
         });
     </script>
 </body>
