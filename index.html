@@ -52,7 +52,7 @@
           </nav>
           
           <!-- Mobile Menu -->
-          <div id="mobileMenu" class="sm:hidden fixed inset-0 z-50 bg-slate-950/95 backdrop-blur-xl hidden">
+          <div id="mobileMenu" class="sm:hidden fixed inset-0 z-50 bg-slate-950/95 backdrop-blur-xl hidden transition-all duration-300">
             <div class="flex flex-col h-full">
               <div class="flex justify-between items-center p-6 border-b border-slate-800">
                 <span class="text-xl font-semibold">Menu</span>
@@ -102,8 +102,12 @@
         </div>
       </div>
       
+      <!-- Mobile Background Image -->
+      <div class="sm:hidden absolute inset-0 z-0">
+        <img src="icodex-cpu.webp" alt="iCodeX CPU Background" class="w-full h-full object-cover opacity-20">
+      </div>
       <div class="pointer-events-none absolute inset-0 -z-10 animated-gradient"></div>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div class="grid lg:grid-cols-2 gap-4 items-center">
           <div class="text-animation-container">
             <p class="inline-flex items-center gap-2 text-xs font-medium tracking-wide uppercase text-brand-300 mb-3 fade-in-text fade-delay-03">
@@ -1130,26 +1134,37 @@
       });
       
       // Mobile menu functionality
-      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-      const closeMobileMenu = document.getElementById('closeMobileMenu');
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
 
-      if (mobileMenuBtn && mobileMenu && closeMobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
-          mobileMenu.classList.remove('hidden');
-        });
-
-        closeMobileMenu.addEventListener('click', () => {
-          mobileMenu.classList.add('hidden');
-        });
-
-        // Close menu when clicking on a link
-        mobileMenu.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
+        if (mobileMenuBtn && mobileMenu && closeMobileMenu) {
+          mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            console.log('Mobile menu opened'); // Debug log
           });
-        });
-      }
+
+          closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            console.log('Mobile menu closed'); // Debug log
+          });
+
+          // Close menu when clicking on a link
+          mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+              mobileMenu.classList.add('hidden');
+            });
+          });
+
+          // Close menu when clicking outside
+          mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+              mobileMenu.classList.add('hidden');
+            }
+          });
+        }
+      });
 
       // Add parallax effect to background elements
       window.addEventListener('scroll', () => {
