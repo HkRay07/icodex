@@ -140,6 +140,7 @@ body {
     right: 0 !important;
     bottom: 0 !important;
     z-index: 9999 !important;
+    display: none;
   }
   
   #mobileMenu.hidden {
@@ -148,6 +149,11 @@ body {
   
   #mobileMenu:not(.hidden) {
     display: flex !important;
+  }
+  
+  /* Make sure mobile menu button is visible */
+  #mobileMenuBtn {
+    display: block !important;
   }
 }
 

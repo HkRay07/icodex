@@ -116,9 +116,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="reveal">
-                    <img src="icodex-cpu.webp" alt="iCodeX CPU" class="w-full h-auto rounded-2xl shadow-2xl max-w-full">
-                </div>
+                                 <div class="reveal">
+                     <!-- Removed the main CPU image, keeping only the background -->
+                 </div>
             </div>
         </div>
     </section>
@@ -314,37 +314,38 @@
         }, 100);
 
         // Mobile menu functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
 
-            if (mobileMenuBtn && mobileMenu && closeMobileMenu) {
-                mobileMenuBtn.addEventListener('click', () => {
-                    mobileMenu.classList.remove('hidden');
-                    console.log('Mobile menu opened'); // Debug log
-                });
+        if (mobileMenuBtn && mobileMenu && closeMobileMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.style.display = 'flex';
+                mobileMenu.classList.remove('hidden');
+            });
 
-                closeMobileMenu.addEventListener('click', () => {
+            closeMobileMenu.addEventListener('click', function() {
+                mobileMenu.style.display = 'none';
+                mobileMenu.classList.add('hidden');
+            });
+
+            // Close menu when clicking on a link
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.style.display = 'none';
                     mobileMenu.classList.add('hidden');
-                    console.log('Mobile menu closed'); // Debug log
                 });
+            });
 
-                // Close menu when clicking on a link
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden');
-                    });
-                });
-
-                // Close menu when clicking outside
-                mobileMenu.addEventListener('click', (e) => {
-                    if (e.target === mobileMenu) {
-                        mobileMenu.classList.add('hidden');
-                    }
-                });
-            }
-        });
+            // Close menu when clicking outside
+            mobileMenu.addEventListener('click', function(e) {
+                if (e.target === mobileMenu) {
+                    mobileMenu.style.display = 'none';
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        }
     </script>
 </body>
 </html>
