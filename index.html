@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>iCodeX Academy – Learn. Build. Grow.</title>
     <meta name="description" content="Practical tech skills, short courses, real projects, and a vibrant community." />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="logo main.webp" />
+    <link rel="shortcut icon" type="image/webp" href="logo main.webp" />
 
     <!-- External CSS and JavaScript -->
     <link rel="stylesheet" href="index.css">
@@ -18,87 +22,7 @@
     <!-- Three.js for 3D effects -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     
-    <style>
-      /* Enhanced animations and effects */
-      @keyframes float {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-20px) rotate(180deg); }
-      }
-      
-      @keyframes pulse-glow {
-        0%, 100% { box-shadow: 0 0 20px rgba(6, 182, 212, 0.3); }
-        50% { box-shadow: 0 0 40px rgba(6, 182, 212, 0.6); }
-      }
-      
-      @keyframes gradient-shift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-      
-      @keyframes slide-in-left {
-        from { transform: translateX(-100px); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
-      }
-      
-      @keyframes slide-in-right {
-        from { transform: translateX(100px); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
-      }
-      
-      .floating-element {
-        animation: float 6s ease-in-out infinite;
-      }
-      
-      .pulse-glow {
-        animation: pulse-glow 2s ease-in-out infinite;
-      }
-      
-      .gradient-animate {
-        background: linear-gradient(-45deg, #06b6d4, #10b981, #3b82f6, #8b5cf6);
-        background-size: 400% 400%;
-        animation: gradient-shift 15s ease infinite;
-      }
-      
-      .slide-in-left {
-        animation: slide-in-left 0.8s ease-out;
-      }
-      
-      .slide-in-right {
-        animation: slide-in-right 0.8s ease-out;
-      }
-      
-      .hover-lift {
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      
-      .hover-lift:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-      }
-      
-      .glass-effect {
-        backdrop-filter: blur(20px);
-        background: rgba(15, 23, 42, 0.8);
-        border: 1px solid rgba(148, 163, 184, 0.1);
-      }
-      
-      .particle {
-        position: absolute;
-        pointer-events: none;
-        opacity: 0.6;
-        animation: float 8s ease-in-out infinite;
-      }
-      
-      .tech-icon {
-        transition: all 0.3s ease;
-      }
-      
-      .tech-icon:hover {
-        transform: scale(1.2) rotate(10deg);
-        filter: drop-shadow(0 0 10px currentColor);
-      }
-    </style>
+
   </head>
   <body class="bg-slate-950 text-slate-200 font-sans selection:bg-brand-500/30">
     <!-- Nav -->
@@ -106,13 +30,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between rounded-3xl bg-slate-900/20 border border-slate-700/30 backdrop-blur-xl px-6 py-4 shadow-2xl supports-[backdrop-filter]:bg-slate-900/10">
           <a href="#" class="flex items-center gap-3 group">
-            <span class="relative inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br from-brand-500 to-accent-600 text-white shadow-glow">
-              <!-- iCodeX monogram -->
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M7 7l-4 5 4 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M17 7l4 5-4 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
+            <img src="logo main.webp" alt="iCodeX Logo" class="w-12 h-12 rounded-lg object-cover shadow-glow">
             <span class="text-xl font-semibold tracking-tight">iCodeX Academy</span>
           </a>
           <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
@@ -133,11 +51,11 @@
     <section class="relative overflow-hidden py-16 sm:py-24">
       <!-- Floating particles background -->
       <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="particle absolute top-20 left-10 w-4 h-4 bg-brand-400/30 rounded-full" style="animation-delay: 0s;"></div>
-        <div class="particle absolute top-40 right-20 w-6 h-6 bg-emerald-400/20 rounded-full" style="animation-delay: 2s;"></div>
-        <div class="particle absolute bottom-40 left-20 w-3 h-3 bg-purple-400/40 rounded-full" style="animation-delay: 4s;"></div>
-        <div class="particle absolute top-60 left-1/3 w-5 h-5 bg-cyan-400/25 rounded-full" style="animation-delay: 6s;"></div>
-        <div class="particle absolute bottom-20 right-1/3 w-4 h-4 bg-pink-400/30 rounded-full" style="animation-delay: 8s;"></div>
+        <div class="particle absolute top-20 left-10 w-4 h-4 bg-brand-400/30 rounded-full animation-delay-0"></div>
+        <div class="particle absolute top-40 right-20 w-6 h-6 bg-emerald-400/20 rounded-full animation-delay-2"></div>
+        <div class="particle absolute bottom-40 left-20 w-3 h-3 bg-purple-400/40 rounded-full animation-delay-4"></div>
+        <div class="particle absolute top-60 left-1/3 w-5 h-5 bg-cyan-400/25 rounded-full animation-delay-6"></div>
+        <div class="particle absolute bottom-20 right-1/3 w-4 h-4 bg-pink-400/30 rounded-full animation-delay-8"></div>
         
         <!-- Floating tech icons -->
         <div class="particle absolute top-32 right-1/4">
@@ -156,16 +74,16 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div class="grid lg:grid-cols-2 gap-4 items-center">
           <div class="text-animation-container">
-            <p class="inline-flex items-center gap-2 text-xs font-medium tracking-wide uppercase text-brand-300 mb-3 fade-in-text" style="animation-delay: 0.3s;">
+            <p class="inline-flex items-center gap-2 text-xs font-medium tracking-wide uppercase text-brand-300 mb-3 fade-in-text fade-delay-03">
               <span class="h-1.5 w-1.5 rounded-full bg-brand-400 pulse-dot"></span> Future-proof learning
             </p>
-            <h1 id="hero-title" class="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-white fade-in-text" style="animation-delay: 0.5s;">
+            <h1 id="hero-title" class="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-white fade-in-text fade-delay-05">
               🚀 Learn. Build. Grow. With iCodeX Academy.
             </h1>
-            <p class="mt-4 text-lg text-slate-300 max-w-2xl fade-in-text" style="animation-delay: 1.2s;">
+            <p class="mt-4 text-lg text-slate-300 max-w-2xl fade-in-text fade-delay-12">
               Practical tech skills, short courses, real projects, and a vibrant community.
             </p>
-            <div class="mt-8 flex flex-col sm:flex-row gap-3 fade-in-text" id="hero-ctas" style="animation-delay: 1.5s;">
+            <div class="mt-8 flex flex-col sm:flex-row gap-3 fade-in-text fade-delay-15" id="hero-ctas">
               <a href="pre-register.html" class="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-600 text-white px-6 py-3 font-semibold shadow-glow hover-lift transition-all duration-300">
                 🎓 Pre-Register
               </a>
@@ -174,11 +92,11 @@
               </a>
             </div>
           </div>
-          <div class="relative reveal" style="opacity: 1; transform: translateY(0);">
+          <div class="relative reveal show">
             <!-- CPU Display Section -->
                           <div class="relative mx-auto w-full max-w-7xl">
                 <div class="text-center ml-24">
-                  <img src="logo2.webp" alt="iCodeX Logo" class="w-[500px] h-[500px] mx-auto object-cover hover:scale-110 hover:rotate-3 hover:shadow-2xl transition-all duration-500 cursor-pointer">
+                  <img src="logo2.webp" alt="iCodeX Logo" class="w-[500px] h-[500px] mx-auto object-cover hover:scale-110 hover:rotate-3 transition-all duration-500 cursor-pointer">
                 </div>
               </div>
           </div>
@@ -190,7 +108,7 @@
     </div>
 
     <!-- About -->
-    <section id="about" class="reveal relative overflow-hidden" style="opacity: 1; transform: translateY(0);">
+    <section id="about" class="reveal relative overflow-hidden show">
       <!-- Background decorative elements -->
       <div class="absolute inset-0 overflow-hidden">
         <div class="absolute top-20 right-10 w-32 h-32 bg-brand-500/5 rounded-full blur-3xl"></div>
@@ -361,128 +279,91 @@
         
         <!-- Animated Arrows Timeline -->
         <div class="relative">
-          <!-- Flowing Color Arrows -->
-          <div class="absolute left-1/2 transform -translate-x-1/2 hidden lg:block">
-            <!-- Arrow 1 -->
-            <div class="mb-6 flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
+          <!-- Chevron Flowing Arrows -->
+          <div class="absolute left-1/2 transform -translate-x-1/2 hidden lg:block" style="height: calc(100% - 200px);">
+            <!-- Chevron Group 1 -->
+            <div class="mb-8 chevron-line">
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
             </div>
-            <!-- Arrow 2 -->
-            <div class="mb-6 flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
+            <!-- Chevron Group 2 -->
+            <div class="mb-8 chevron-line">
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
             </div>
-            <!-- Arrow 3 -->
-            <div class="mb-6 flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
+            <!-- Chevron Group 3 -->
+            <div class="mb-8 chevron-line">
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
             </div>
-            <!-- Arrow 4 -->
-            <div class="mb-6 flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
+            <!-- Chevron Group 4 -->
+            <div class="mb-8 chevron-line">
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
             </div>
-            <!-- Arrow 5 -->
-            <div class="mb-6 flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
+            <!-- Chevron Group 5 -->
+            <div class="mb-8 chevron-line">
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
             </div>
-            <!-- Arrow 6 -->
-            <div class="mb-6 flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
+            <!-- Chevron Group 6 -->
+            <div class="mb-8 chevron-line">
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
             </div>
-            <!-- Arrow 7 -->
-            <div class="mb-6 flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
+            <!-- Chevron Group 7 -->
+            <div class="mb-8 chevron-line">
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
             </div>
-            <!-- Arrow 8 -->
-            <div class="mb-6 flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
+            <!-- Chevron Group 8 -->
+            <div class="mb-8 chevron-line">
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
             </div>
-            <!-- Arrow 9 -->
-            <div class="mb-6 flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
+            <!-- Chevron Group 9 -->
+            <div class="mb-8 chevron-line">
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
             </div>
-            <!-- Arrow 10 -->
-            <div class="mb-6 flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
+            <!-- Chevron Group 10 -->
+            <div class="mb-8 chevron-line">
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
             </div>
-            <!-- Arrow 11 -->
-            <div class="mb-6 flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
-            </div>
-            <!-- Arrow 12 -->
-            <div class="mb-6 flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
-            </div>
-            <!-- Arrow 13 -->
-            <div class="mb-6 flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
-            </div>
-            <!-- Arrow 14 -->
-            <div class="mb-6 flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
-            </div>
-            <!-- Arrow 15 -->
-            <div class="mb-6 flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
-            </div>
-            <!-- Arrow 16 -->
-            <div class="mb-6 flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
-            </div>
-            <!-- Arrow 17 -->
-            <div class="mb-6 flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
-            </div>
-            <!-- Arrow 18 -->
-            <div class="mb-6 flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
-            </div>
-            <!-- Arrow 19 -->
-            <div class="mb-6 flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
-            </div>
-            <!-- Arrow 20 -->
-            <div class="flowing-arrow">
-              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l5 5 5-5"/>
-              </svg>
-            </div>
+
+
+
           </div>
           
           <!-- Timeline Steps -->
@@ -525,7 +406,7 @@
                   <div class="relative z-10">
                     <div class="flex items-center gap-4 mb-4">
                       <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 relative">
-                        <div class="absolute inset-0 rounded-xl bg-emerald-400/20 animate-ping" style="animation-delay: 0.2s;"></div>
+                        <div class="absolute inset-0 rounded-xl bg-emerald-400/20 animate-ping ping-delay-02"></div>
                         <svg class="w-6 h-6 text-emerald-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
@@ -537,7 +418,7 @@
                     </div>
                     <p class="text-slate-300 leading-relaxed">Select your learning path from our specialized tracks designed for different career goals and skill levels.</p>
                     <div class="mt-4 flex items-center gap-2 text-sm text-slate-400">
-                      <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" style="animation-delay: 0.2s;"></span>
+                      <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse pulse-delay-02"></span>
                       <span>Multiple career paths</span>
                     </div>
                     <div class="mt-4 flex items-center gap-2 text-emerald-400 text-sm font-medium">
@@ -557,7 +438,7 @@
                   <div class="relative z-10">
                     <div class="flex items-center gap-4 mb-4">
                       <div class="w-12 h-12 rounded-xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 relative">
-                        <div class="absolute inset-0 rounded-xl bg-purple-400/20 animate-ping" style="animation-delay: 0.4s;"></div>
+                        <div class="absolute inset-0 rounded-xl bg-purple-400/20 animate-ping ping-delay-04"></div>
                         <svg class="w-6 h-6 text-purple-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
                         </svg>
@@ -569,7 +450,7 @@
                     </div>
                     <p class="text-slate-300 leading-relaxed">Bite-sized learning modules designed for busy schedules. Learn at your own pace with practical examples.</p>
                     <div class="mt-4 flex items-center gap-2 text-sm text-slate-400">
-                      <span class="h-2 w-2 rounded-full bg-purple-400 animate-pulse" style="animation-delay: 0.4s;"></span>
+                      <span class="h-2 w-2 rounded-full bg-purple-400 animate-pulse pulse-delay-04"></span>
                       <span>15-30 min modules</span>
                     </div>
                     <div class="mt-4 flex items-center gap-2 text-purple-400 text-sm font-medium">
@@ -586,7 +467,7 @@
                   <div class="relative z-10">
                     <div class="flex items-center gap-4 mb-4">
                       <div class="w-12 h-12 rounded-xl bg-orange-500/20 border border-orange-500/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 relative">
-                        <div class="absolute inset-0 rounded-xl bg-orange-400/20 animate-ping" style="animation-delay: 0.6s;"></div>
+                        <div class="absolute inset-0 rounded-xl bg-orange-400/20 animate-ping ping-delay-06"></div>
                         <svg class="w-6 h-6 text-orange-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -599,7 +480,7 @@
                     </div>
                     <p class="text-slate-300 leading-relaxed">Apply what you learn through hands-on exercises and real-world coding challenges.</p>
                     <div class="mt-4 flex items-center gap-2 text-sm text-slate-400">
-                      <span class="h-2 w-2 rounded-full bg-orange-400 animate-pulse" style="animation-delay: 0.6s;"></span>
+                      <span class="h-2 w-2 rounded-full bg-orange-400 animate-pulse pulse-delay-06"></span>
                       <span>Interactive challenges</span>
                     </div>
                     <div class="mt-4 flex items-center gap-2 text-orange-400 text-sm font-medium">
@@ -619,7 +500,7 @@
                   <div class="relative z-10">
                     <div class="flex items-center gap-4 mb-4">
                       <div class="w-12 h-12 rounded-xl bg-fuchsia-500/20 border border-fuchsia-500/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 relative">
-                        <div class="absolute inset-0 rounded-xl bg-fuchsia-400/20 animate-ping" style="animation-delay: 0.8s;"></div>
+                        <div class="absolute inset-0 rounded-xl bg-fuchsia-400/20 animate-ping ping-delay-08"></div>
                         <svg class="w-6 h-6 text-fuchsia-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
                         </svg>
@@ -631,7 +512,7 @@
                     </div>
                     <p class="text-slate-300 leading-relaxed">Create a real project that showcases your skills and can be added to your portfolio.</p>
                     <div class="mt-4 flex items-center gap-2 text-sm text-slate-400">
-                      <span class="h-2 w-2 rounded-full bg-fuchsia-400 animate-pulse" style="animation-delay: 0.8s;"></span>
+                      <span class="h-2 w-2 rounded-full bg-fuchsia-400 animate-pulse pulse-delay-08"></span>
                       <span>Portfolio-ready project</span>
                     </div>
                     <div class="mt-4 flex items-center gap-2 text-fuchsia-400 text-sm font-medium">
@@ -648,7 +529,7 @@
                   <div class="relative z-10">
                     <div class="flex items-center gap-4 mb-4">
                       <div class="w-12 h-12 rounded-xl bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 relative">
-                        <div class="absolute inset-0 rounded-xl bg-cyan-400/20 animate-ping" style="animation-delay: 1s;"></div>
+                        <div class="absolute inset-0 rounded-xl bg-cyan-400/20 animate-ping ping-delay-1"></div>
                         <svg class="w-6 h-6 text-cyan-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                         </svg>
@@ -660,7 +541,7 @@
                     </div>
                     <p class="text-slate-300 leading-relaxed">Complete your journey by earning achievement badges and joining our exclusive iCodeX community.</p>
                     <div class="mt-4 flex items-center gap-2 text-sm text-slate-400">
-                      <span class="h-2 w-2 rounded-full bg-cyan-400 animate-pulse" style="animation-delay: 1s;"></span>
+                      <span class="h-2 w-2 rounded-full bg-cyan-400 animate-pulse pulse-delay-1"></span>
                       <span>Community access</span>
                     </div>
                     <div class="mt-4 flex items-center gap-2 text-cyan-400 text-sm font-medium">
@@ -1154,45 +1035,77 @@
         scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
       }
 
-      // Enhanced animated counters with GSAP
+      // Enhanced counter animation with easing
       function animateCounter(element, target, duration = 2000) {
-        gsap.fromTo(element, 
-          { textContent: 0 },
-          {
-            textContent: target,
-            duration: duration / 1000,
-            ease: "power2.out",
-            snap: { textContent: 1 },
-            onUpdate: function() {
-              element.textContent = Math.ceil(element.textContent);
-            }
+        const start = 0;
+        const startTime = performance.now();
+        
+        function updateCounter(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          
+          // Easing function for smooth animation
+          const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+          const current = Math.floor(start + (target - start) * easeOutQuart);
+          
+          element.textContent = current;
+          
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            element.textContent = target;
+            // Add completion effect
+            element.style.transform = "scale(1.1)";
+            setTimeout(() => {
+              element.style.transform = "scale(1)";
+            }, 200);
           }
-        );
+        }
+        
+        requestAnimationFrame(updateCounter);
       }
 
-      // Intersection Observer for counters with enhanced effects
+      // Function to start counter animations
+      function startCounters() {
+        const counters = document.querySelectorAll('[data-count]');
+        
+        counters.forEach(counter => {
+          const count = parseInt(counter.getAttribute('data-count'));
+          
+          // Add a glow effect when counter starts
+          counter.style.textShadow = "0 0 20px rgba(6, 182, 212, 0.8)";
+          counter.style.transition = "transform 0.2s ease";
+          
+          animateCounter(counter, count);
+          
+          // Remove glow effect after animation
+          setTimeout(() => {
+            counter.style.textShadow = "none";
+          }, 2000);
+        });
+      }
+
+      // Start counters when page loads
+      document.addEventListener('DOMContentLoaded', startCounters);
+
+      // Intersection Observer for counters
       const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const target = entry.target;
             const count = parseInt(target.getAttribute('data-count'));
             
-            // Add a glow effect when counter starts
-            gsap.to(target, {
-              textShadow: "0 0 20px rgba(6, 182, 212, 0.8)",
-              duration: 0.3,
-              ease: "power2.out"
-            });
-            
-            animateCounter(target, count);
-            
-            // Remove glow effect after animation
-            gsap.to(target, {
-              textShadow: "none",
-              duration: 0.3,
-              delay: 2,
-              ease: "power2.out"
-            });
+            // Only animate if not already animated
+            if (target.textContent === '0') {
+              target.style.textShadow = "0 0 20px rgba(6, 182, 212, 0.8)";
+              target.style.transition = "transform 0.2s ease";
+              
+              animateCounter(target, count);
+              
+              setTimeout(() => {
+                target.style.textShadow = "none";
+              }, 2000);
+            }
             
             counterObserver.unobserve(target);
           }
