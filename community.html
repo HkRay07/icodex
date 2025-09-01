@@ -374,27 +374,127 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Mobile menu functionality
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        // Mobile menu functionality - Fixed and improved
+        function initMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const closeMobileMenu = document.getElementById('closeMobileMenu');
+            const menuBackdrop = document.getElementById('menuBackdrop');
+            const menuGlow = document.getElementById('menuGlow');
 
-        if (mobileMenuBtn && mobileMenu && closeMobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.remove('hidden');
-            });
+            if (mobileMenuBtn && mobileMenu && closeMobileMenu) {
+                // Open menu with enhanced effects
+                mobileMenuBtn.onclick = function() {
+                    // Show backdrop
+                    if (menuBackdrop) {
+                        menuBackdrop.style.opacity = '1';
+                        menuBackdrop.classList.remove('pointer-events-none');
+                    }
+                    
+                    // Show menu with smooth animation
+                    mobileMenu.style.opacity = '1';
+                    mobileMenu.classList.remove('pointer-events-none');
+                    
+                    // Add glow effect
+                    if (menuGlow) {
+                        setTimeout(() => {
+                            menuGlow.style.opacity = '1';
+                        }, 100);
+                    }
+                    
+                    // Add entrance animation to menu items
+                    const menuItems = mobileMenu.querySelectorAll('nav > div, nav > a');
+                    menuItems.forEach((item, index) => {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        
+                        setTimeout(() => {
+                            item.style.transition = 'all 0.4s ease-out';
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 200 + (index * 100));
+                    });
+                };
 
-            closeMobileMenu.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
+                // Close menu with enhanced effects
+                closeMobileMenu.onclick = function() {
+                    closeMenu();
+                };
 
-            // Close menu when clicking on a link
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
+                // Close menu when clicking on links
+                const menuLinks = mobileMenu.querySelectorAll('nav a');
+                menuLinks.forEach(link => {
+                    link.onclick = function() {
+                        closeMenu();
+                    };
                 });
-            });
+
+                // Close menu when clicking outside
+                mobileMenu.onclick = function(e) {
+                    if (e.target === mobileMenu) {
+                        closeMenu();
+                    }
+                };
+                
+                // Close menu when clicking on backdrop
+                if (menuBackdrop) {
+                    menuBackdrop.onclick = function() {
+                        closeMenu();
+                    };
+                }
+
+                // Close menu function
+                function closeMenu() {
+                    // Hide backdrop
+                    if (menuBackdrop) {
+                        menuBackdrop.style.opacity = '0';
+                        menuBackdrop.classList.add('pointer-events-none');
+                    }
+                    
+                    // Remove glow effect
+                    if (menuGlow) {
+                        menuGlow.style.opacity = '0';
+                    }
+                    
+                    // Hide menu items with exit animation
+                    const menuItems = mobileMenu.querySelectorAll('nav > div, nav > a');
+                    menuItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.style.transition = 'all 0.3s ease-in';
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(20px)';
+                        }, index * 50);
+                    });
+                    
+                    // Hide menu after animations
+                    setTimeout(() => {
+                        mobileMenu.style.opacity = '0';
+                        mobileMenu.classList.add('pointer-events-none');
+                    }, 300);
+                }
+
+                // Add hover effects for menu items
+                const menuItems = mobileMenu.querySelectorAll('nav > div, nav > a');
+                menuItems.forEach(item => {
+                    item.addEventListener('mouseenter', function() {
+                        this.style.transform = 'scale(1.02) translateY(-2px)';
+                        this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
+                    });
+                    
+                    item.addEventListener('mouseleave', function() {
+                        this.style.transform = 'scale(1) translateY(0)';
+                        this.style.boxShadow = 'none';
+                    });
+                });
+            }
         }
+
+      // Initialize mobile menu when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMobileMenu);
+      } else {
+        initMobileMenu();
+      }
     </script>
 </body>
 </html>
