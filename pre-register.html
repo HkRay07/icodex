@@ -54,7 +54,7 @@
       <div class="blob blob--blue" style="top:10%; right:30%; width:700px; height:700px; opacity:.16"></div>
     </div>
     <!-- Header -->
-    <header class="z-40">
+    <header id="siteHeader" class="sticky top-4 z-40 transition-transform duration-300 will-change-transform">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between rounded-3xl bg-slate-900/20 border border-slate-700/30 backdrop-blur-xl px-3 sm:px-6 py-1.5 sm:py-3 shadow-2xl supports-[backdrop-filter]:bg-slate-900/10">
           <a href="index.html" class="flex items-center gap-1.5 sm:gap-3 group">
@@ -218,6 +218,32 @@
         </div>
       </div>
     </header>
+
+<script>
+  (function(){
+    const header = document.getElementById('siteHeader');
+    if (!header) return;
+    let lastY = window.scrollY;
+    let ticking = false;
+    function onScroll(){
+      const y = window.scrollY;
+      const goingDown = y > lastY;
+      if (y > 40 && goingDown) {
+        header.style.transform = 'translateY(-120%)';
+      } else {
+        header.style.transform = 'translateY(0)';
+      }
+      lastY = y;
+      ticking = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
+</script>
 
     <div id="root"></div>
 
